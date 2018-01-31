@@ -1,0 +1,41 @@
+1.打开终端
+2.复制命令到终端
+    $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+3.一路回车
+	Generating public/private rsa key pair.   
+	Enter a file in which to save the key (/home/you/.ssh/id_rsa): [Press enter]
+4.直到输入密码
+	Enter passphrase (empty for no passphrase):
+	Enter same passphrase again:
+5.检查是否生成SSH密钥
+	eval "$(ssh-agent -s)"
+	Agent pid 59566
+6.查看生成的.ssh文件夹下有什么
+	$ ls ~/.ssh
+7.用vim或者cat命令打开id_rsa.pub文档并将里边的内容复制下来
+	$ cat id_rsa.pub
+8.进入网址https://github.com/settings/keys	进入New SSH Key链接，Title设置为邮箱，将第7步复制下来的内容，粘贴到Key对话框中
+9.然后进入网址https://github.com/timidsmile/HelloWorld	点击中间绿色按钮Clone or download	将网址复制下来
+10.然后回到你的终端，在你常用的随便一个目录里里创建一个目录，然后进入
+	mkdir github
+	cd github
+	git clone git"第9步中复制的网址"
+11.执行
+	git branch -r
+   查看远程下有哪些分支
+   当然，你也可以自己创建一个分支
+	git branch xxx
+12.执行
+	git checkout xxx
+   进入分支
+13.git status
+	可以查看现在在哪个分支上
+14.在本地创建一个文件
+	touch test.txt
+15.把当前目录下的改动添加到git仓库中
+	git add test.txt
+16.提交到本地仓库中，别的仓库看不到
+	git commit -m"测试文件"
+17.提交到远程分支，让别的仓库也看见
+	git push origin xxx
+   然后，你的文件，别的仓库也能看到了
