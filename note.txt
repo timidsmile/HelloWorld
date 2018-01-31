@@ -39,3 +39,10 @@
 17.提交到远程分支，让别的仓库也看见
 	git push origin xxx
    然后，你的文件，别的仓库也能看到了
+
+
+注意：
+1.在执行第16步之前，先执行
+	git config --global user.email "you@example.com"
+	git config --global user.name "Your name"
+2.执行完第17步后，提示输入用户名和密码，这里的用户名和密码是你的github的账号和密码
